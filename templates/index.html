@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>East West Management Center</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+<style>
+ #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+</style>
+
+  <!-- Favicons
+  <link href="{%static 'img/favicon.png'%}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+-->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{%static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/lightbox/css/lightbox.min.css'%}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+
+    <div id="topbar">
+      <div class="container">
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#header" class="scrollto"><img src="{% static 'img/logo.png'%}" alt="" class="img-fluid" style="margin-left:0 ;margin-top:-1em;height:4em !important;width:4em;"></a>
+        <h1 class="text-light" style="margin-top: -1.5em;margin-left: 2em;"><a href="#intro" class="scrollto"><span>EWMC</span></a></h1>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="{%url 'applicationForm'%}">Nat-Test</a></li>
+          <li><a href="#faq">Nat-Result</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last">
+          <h2>EWMC<br>for Your <span>Education!</span></h2>
+          <div>
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-5 col-md-6">
+            <div class="about-img">
+              <img src="{%static 'img/nat.jpg'%}" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-6">
+            <div class="about-content">
+              <h2>About Us</h2>
+              <h3>EAST WEST MANAGEMENT CENTER</h3>
+                is an authorized center for Japanese Language NAT TEST management in Kathmandu. This center is
+                responsible for conducting NAT test examination and also distributing the results of the examination
+                including score report and certificate of proficiency. For the convenience of the students,
+                we have been providing both online and offline services for filling up the NAT test form. However,
+                there is no such online provision for distribution of the exam score report.
+              <p>This center operates
+                fully under<b> Senmon Kyouiku Publishing Co. (Shinjuku-ku, Tokyo, Japan)</b>  as a regional office of Kathmandu
+                district.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- #about -->
+    <!--==========================
+      Frequently Asked Questions Section
+    ============================-->
+    <section id="faq">
+      <div class="container">
+        <header class="section-header" style="text-align:center;">
+          <h3>NAT-Result</h3>
+          <p>Your result will be published online 15 days after your examination date.</p>
+            <p>Please visit the following
+            link in order to view your result  <b><i><a href="http://www.nat-test.com/contents/result/result-id19-3.html">Click Here</a></i></b>
+          </p>
+          <p>You will be able to collect your exam score  report and
+            certificate of proficiency two weeks after the result published date .Kindly confirm whether your exam
+            reports have arrived or not by contacting in our office.Please bring your original admission ticket to
+            collect your exam score reports.</p>
+        </header>
+
+
+      </div>
+    </section><!-- #faq -->
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-7">
+
+            <div class="row">
+
+                <div class="col-sm-7">
+<!--<div class="mapouter">-->
+<!--  <div class="gmap_canvas" style="width:380px;height:500px">-->
+<!--    <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=chabahil&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">-->
+
+<!--    </iframe>-->
+<!--  </div><style>.mapouter{position:relative;text-align:right;height:400px !important;width:400px !important;}.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100px;}</style></div>-->
+<div id="map"></div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: 27.7178703, lng: 85.3472612};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'NAT Office!'
+        });
+      }
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67LLzfC5IDJmr_nwwlzfuWTE0xIV4Rao&callback=initMap">
+    </script>
+
+                </div>
+
+                <div class="col-sm-5">
+                  <div class="footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About us</a></li>
+                      <li><a href="#">Nat-Test</a></li>
+                      <li><a href="#">Nat-Result</a></li>
+                      <li><a href="{%url 'signin'%}">Sign-In</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <p>
+                      Chabahil, 7 <br>
+                      Kathmandu, Nepal<br>
+                      <strong>Phone:</strong> 01-4482809<br>
+                      <strong>Email:</strong> nattestkathmandu@gmail.com<br>
+                    </p>
+                  </div>
+
+                  <div class="social-links">
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                  </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4" style="margin-left:6em">
+
+            <div class="form">
+              
+              <h4>Send us a message</h4>
+              <form method="post" action="#" enctype="multipart/form-data">
+                {% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+                    {{form}}
+                    {% csrf_token %}
+                    <br>
+                    <button type="submit" class="btn btn-primary">Sent Message</button>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+    <link href="{% static 'css/bootstrap.min.css.map'%}" rel="stylesheet">
+  <script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'lib/easing/easing.min.js'%}"></script>
+  <script src="{% static 'lib/mobile-nav/mobile-nav.js'%}"></script>
+  <script src="{% static 'lib/wow/wow.min.js'%}"></script>
+  <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+  <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'lib/lightbox/js/lightbox.min.js'%}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'contactform/contactform.js'%}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'js/main.js'%}"></script>
+
+</body>
+</html>

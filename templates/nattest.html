@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>East West Management Center</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <style>
+ #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+
+
+    </style>
+
+    <!-- Favicons
+    <link href="{%static 'img/favicon.png'%}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+  -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{%static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css'%}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+<!--==========================
+Header
+============================-->
+<header id="header">
+
+    <div id="topbar">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="logo float-left">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="#header" class="scrollto"><img src="{% static 'img/logo.png'%}" alt="" class="img-fluid"
+                                                    style="margin-left:0 ;margin-top:-1em;height:4em !important;width:4em;"></a>
+            <h1 class="text-light" style="margin-top: -1.5em;margin-left: 2em;"><a href="#intro" class="scrollto"><span>EWMC</span></a>
+            </h1>
+        </div>
+
+        <nav class="main-nav float-right d-none d-lg-block">
+            <ul>
+                <li><a href="{%url 'index'%}">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li class="active"><a href="{%url 'applicationForm'%}">Nat-Test</a></li>
+                <li><a href="">Nat-Result</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </nav><!-- .main-nav -->
+
+    </div>
+</header><!-- #header -->
+
+<div class="container" id="nattest">
+    <div class="row">
+
+        <div class="col-lg-9 col-md-9">
+            <div class="about-content">
+
+
+                {% for schedule in schedule %}
+                <h2>{{schedule.name}}</h2>
+                <div>
+                    <img src="{{ MEDIA_URL }}{{ schedule.photo.url }}" style="height:100%;width:100%">
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        <!--            <button class="btn blue-gradient" data-toggle="modal" data-target="#myModalNorm" style="height:2em; margin-top:10em;">-->
+        <!--    Register Online-->
+        <!--            </button>-->
+        <a href="#" data-toggle="modal" data-target="#myModalNorm" class="btn btn-primary btn-primary"
+           style="height:2.5em; margin-top:10em;">
+            <span class="glyphicon glyphicon-upload"></span> Register Online</a>
+
+    </div>
+
+</div>
+<div class="container" id="about" style="padding:0% !important;">
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <div class="about-content">
+                <h2> REQUIRED DOCUMENTS FOR THE FORM:</h2>
+                <div>
+                    <p>• Photocopy of government issued document which contains the name and date of birth of the
+                        candidates in english (citizenship, passport etc)</p>
+                    <p>• Two photos without wearing glasses and cap</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container" id="faq" style="padding:0% !important;">
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <div class="about-content">
+                <h2 style="color:#413e66;font-family:Montserrat;font-weight:700;">HOW TO FILL THE ONLINE FORM:</h2>
+                <div>
+                    <p>• Firstly Examinee or Institute should deposit the Nat-Test Fee in the name of students at Civi
+                        bank in any branches.</p>
+                    <p>• Examinee or Institute have to upload the Deposit Slip while submitting the Form.</p>
+                    <h2 style="color:#413e66;font-family:Montserrat;font-weight:500;">Account Details:</h2>
+                    <p>• Account Holder's Name : XYZ </p>
+                    <p>• Account Number: 04710159632018</p>
+                    <img src="{% static 'img/banklogo.png'%}" alt="banklogo">
+                    <br> <br> </p>
+                    <h2 style="color:#413e66;font-family:Montserrat;font-weight:500;">Instrunction to Examinee:</h2>
+                    <p>• First of all check the exam schedule properly to identify the test dates and the grade
+                        available in the particular test.</p>
+                    <p>• Fill all the details correctly and verify Name and Date of Birth for exact match with your ID
+                        proof documents.</p>
+                    <p>• After Submitting the NAT TEST form we will send the verify email at the given email address. So
+                        the examinees are requested to check their email and also spam folder of their mail.</p>
+                    <p>• Examinee or their representative should compulsorily bring the deposit slip in the NAT test
+                        office while collecting their admission ticket.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<main id="main">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-lg" id="myModalNorm" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">
+                                        Japanese NAT-TEST Application Form
+                                    </h4>
+                                    <button type="button" class="close"
+                                            data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+
+                                </div>
+                                <!-- Modal Body -->
+                                {% for message in messages %}
+                                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                                {% if form_error %}
+                                $(#myModalNorm).modal("show");
+                                {% endif %}
+                                <div class="modal-body" id="alert-modal-body">
+
+                                    <form method="post" action="" enctype="multipart/form-data" id="application">
+                                        <div class="form-group">
+                                            {% csrf_token%}
+                                            {{ form.non_field_errors }}
+                                            <div class="form-group">
+                                                {% for field in appform %}
+                                                <div class="form-group">
+                                                    {% if field.errors %}
+                                                    <ul class="form-errors">
+                                                        {% for error in field.errors %}
+                                                        <li><span class="fa fa-exclamation-triangle"></span> <strong>{{
+                                                            error|escape }}</strong></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    {% endif %}
+                                                    {{ field.label_tag }} {{ field }}
+                                                    {% if field.help_text %}
+                                                    <div class="form-helptext">{{ field.help_text }}</div>
+                                                    {% endif %}
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger"
+                                                        data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="submit" class="btn btn-success">Submit Form</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+    </section><!-- #about -->
+
+</main>
+<script>
+    function alertModal(title, body) {
+  // Display error message to the user in a modal
+  $('#alert-modal-body').html(body);
+  $('#alert-modal').modal('show');
+}
+</script>
+<script>
+$(document).ready(function() {
+    {% if form_errors %}
+    $("#myModalNorm").modal("show");
+    {% endif %}
+});
+
+</script>
+<!--  <script>-->
+<!--  $('#myModal').on('shown.bs.modal', function () {-->
+<!--  $('#myInput').trigger('focus')-->
+<!--})-->
+<!--</script>-->
+
+
+<!--==========================
+  Footer
+============================-->
+<footer id="footer" class="section-bg">
+    <div class="footer-top">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-7">
+
+                    <div class="row">
+
+                        <div class="col-sm-7">
+                            <!--<div class="mapouter">-->
+                            <!--  <div class="gmap_canvas" style="width:380px;height:500px">-->
+                            <!--    <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=chabahil&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">-->
+
+                            <!--    </iframe>-->
+                            <!--  </div><style>.mapouter{position:relative;text-align:right;height:400px !important;width:400px !important;}.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100px;}</style></div>-->
+                            <div id="map"></div>
+                            <script>
+
+      function initMap() {
+        var myLatLng = {lat: 27.7178703, lng: 85.3472612};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'NAT Office!'
+        });
+      }
+
+                            </script>
+
+                            <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67LLzfC5IDJmr_nwwlzfuWTE0xIV4Rao&callback=initMap">
+                            </script>
+
+                        </div>
+
+                        <div class="col-sm-5">
+                            <div class="footer-links">
+                                <h4>Useful Links</h4>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Nat-Test</a></li>
+                                    <li><a href="#">Nat-Result</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-links">
+                                <h4>Contact Us</h4>
+                                <p>
+                                    Chabahil, 7 <br>
+                                    Kathmandu, Nepal<br>
+                                    <strong>Phone:</strong> 01-4482809<br>
+                                    <strong>Email:</strong> nattestkathmandu@gmail.com<br>
+                                    mail@eastwestmc.com.np
+                                </p>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4" style="margin-left:6em">
+
+                    <div class="form">
+
+                        <h4>Send us a message</h4>
+                        <form method="post" action="#" enctype="multipart/form-data">
+                            {{form}}
+                            {% csrf_token %}
+                            <br>
+                            <button type="submit" class="btn btn-primary">Sent Message</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</footer><!-- #footer -->
+
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<!-- Uncomment below i you want to use a preloader -->
+<!-- <div id="preloader"></div> -->
+
+<!-- JavaScript Libraries -->
+<link href="{% static 'css/bootstrap.min.css.map'%}" rel="stylesheet">
+<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'lib/easing/easing.min.js'%}"></script>
+<script src="{% static 'lib/mobile-nav/mobile-nav.js'%}"></script>
+<script src="{% static 'lib/wow/wow.min.js'%}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js'%}"></script>
+<!-- Contact Form JavaScript File -->
+<script src="{% static 'contactform/contactform.js'%}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/main.js'%}"></script>
+
+</body>
+</html>
